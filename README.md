@@ -40,7 +40,7 @@
 
 在 Lucene.Net.Analysis 中添加一个自己的 MyAnalyzer
 
-```cs
+```c#
 //文件：Lucene/Net/Analysis/MyAnalyzer/MyAnalyzer.cs
 using System;
 using System.Collections.Generic;
@@ -74,7 +74,7 @@ namespace Lucene.Net.Analysis.MyAnalyzer
 }
 ```
 
-```cs
+```c#
 //文件：Lucene/Net/Analysis/MyAnalyzer/MyTokenizer.cs
 using System;
 using System.Collections.Generic;
