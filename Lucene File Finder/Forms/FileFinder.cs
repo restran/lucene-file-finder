@@ -325,14 +325,6 @@ namespace LuceneFileFinder.Forms
         }
         #endregion
 
-        #region 关于ToolStripMenuItem_Click
-        private void 关于ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AboutForm about = new AboutForm();
-            about.Show(this);
-        }
-        #endregion
-
         #endregion
 
         #endregion

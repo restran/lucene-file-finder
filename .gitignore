@@ -182,5 +182,7 @@ UpgradeLog*.htm
 
 # Microsoft Fakes
 FakesAssemblies/
+
+
 /ID3Class
 /TagLib
