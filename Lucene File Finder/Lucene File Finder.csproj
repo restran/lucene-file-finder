@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F63550D1-9A00-431E-BE58-F07ABB0B41DE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LuceneFileFinder</RootNamespace>
+    <AssemblyName>Lucene File Finder</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="taglib-sharp, Version=2.0.3.7, Culture=neutral, PublicKeyToken=db62eba44689b5b0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\taglib-sharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Control\DoubleBufferListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\MagicMirror.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\MagicMirror.designer.cs">
+      <DependentUpon>MagicMirror.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Index.cs" />
+    <Compile Include="Core\SaveResult.cs" />
+    <Compile Include="Core\Search.cs" />
+    <Compile Include="Forms\FileFinder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FileFinder.designer.cs">
+      <DependentUpon>FileFinder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\IndexManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\IndexManager.designer.cs">
+      <DependentUpon>IndexManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SaveForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SaveForm.designer.cs">
+      <DependentUpon>SaveForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Type\FileDataStruct.cs" />
+    <Compile Include="Type\IndexInfo.cs" />
+    <Compile Include="Type\KeywordStruct.cs" />
+    <Compile Include="Type\MagicMirrorStruct.cs" />
+    <Compile Include="Type\Mode.cs" />
+    <Compile Include="Type\MP3DataStruct.cs" />
+    <Compile Include="Type\PageRange.cs" />
+    <Compile Include="Type\Settings.cs" />
+    <Compile Include="Type\Status.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\Deal.cs" />
+    <Compile Include="Util\DirectoryOpener.cs" />
+    <Compile Include="Util\FileDirectoryFinder.cs" />
+    <Compile Include="Util\GetProperty.cs" />
+    <Compile Include="Util\GetSystemIcon.cs" />
+    <Compile Include="Util\ListViewColumnSorter.cs" />
+    <Compile Include="Util\Static.cs" />
+    <EmbeddedResource Include="Control\MagicMirror.resx">
+      <DependentUpon>MagicMirror.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FileFinder.resx">
+      <DependentUpon>FileFinder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\IndexManager.resx">
+      <DependentUpon>IndexManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SaveForm.resx">
+      <DependentUpon>SaveForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icon.ico" />
+    <Content Include="Library\taglib-sharp.dll" />
+    <Content Include="Resources\all.png" />
+    <Content Include="Resources\artist.png" />
+    <Content Include="Resources\background.png" />
+    <Content Include="Resources\Fwdw_icons_35.png" />
+    <Content Include="Resources\Fwdw_icons_39.png" />
+    <Content Include="Resources\Fwdw_icons_40.png" />
+    <Content Include="Resources\Fwdw_icons_43.png" />
+    <Content Include="Resources\Fwdw_icons_60.png" />
+    <Content Include="Resources\jpg.png" />
+    <Content Include="Resources\logo.png" />
+    <Content Include="Resources\magicMirror.png" />
+    <Content Include="Resources\magicMirror_press.png" />
+    <None Include="Resources\MenuStripBackImage.png" />
+    <Content Include="Resources\mp3.png" />
+    <Content Include="Resources\next.png" />
+    <Content Include="Resources\pixelicious_126.png" />
+    <Content Include="Resources\preview.jpg" />
+    <Content Include="Resources\previous.png" />
+    <Content Include="Resources\swr.png" />
+    <Content Include="Resources\swr_press.png" />
+    <Content Include="Resources\txt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lucene.Net 2.4.0\Lucene.Net-2.4.0.csproj">
+      <Project>{5D4AD9BE-1FFB-41AB-9943-25737971BF57}</Project>
+      <Name>Lucene.Net-2.4.0</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
